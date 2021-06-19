@@ -24,16 +24,16 @@ public class PlayerMovement : MonoBehaviour
         switch (camPos.getPositionCamera())
         {
             case 0:
-                rb.velocity = new Vector3(h * vel, 0, 0);
+                rb.velocity = new Vector3(h * vel, v != 0 || h != 0 ? 0 : -5 , v * vel);
                 break;
             case 1:
-                rb.velocity = new Vector3(0, 0, h * vel);
+                rb.velocity = new Vector3(-v * vel, v != 0 || h != 0 ? 0 : -5, h * vel);
                 break;
             case 2:
-                rb.velocity = new Vector3(h * vel, 0, 0);
+                rb.velocity = new Vector3(-h * vel, v != 0 || h != 0 ? 0 : -5, -v * vel);
                 break;
             case 3:
-                rb.velocity = new Vector3(0, 0, h * vel);
+                rb.velocity = new Vector3(v * vel, v != 0 || h != 0 ? 0 : -5, -h * vel);
                 break;
         }
         
