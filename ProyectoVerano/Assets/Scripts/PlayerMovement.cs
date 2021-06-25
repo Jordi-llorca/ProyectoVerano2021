@@ -67,6 +67,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void Morir()
     {
-        Debug.Log("Muerto :(");
+        FindObjectOfType<LevelLoader>().ReloadLevel();
     }
 }
